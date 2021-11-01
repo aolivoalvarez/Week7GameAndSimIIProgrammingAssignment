@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;
     bool isDead;
     bool isSinking;
+
+    [SerializeField]
+    Image hCircle;
 
 
     void Awake ()
@@ -34,6 +38,8 @@ public class EnemyHealth : MonoBehaviour
         {
             transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
         }
+
+        healthCircle();
     }
 
 
@@ -51,16 +57,20 @@ public class EnemyHealth : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            Death ();
+            Death (hitPoint);
         }
     }
 
 
-    void Death ()
+    void Death (Vector3 hitPoint)
     {
         isDead = true;
 
         capsuleCollider.isTrigger = true;
+
+        Vector3 knockback = -transform.forward * 3;
+
+        transform.position = hitPoint + knockback;
 
         anim.SetTrigger ("Dead");
 
@@ -76,5 +86,10 @@ public class EnemyHealth : MonoBehaviour
         isSinking = true;
         ScoreManager.score += scoreValue;
         Destroy (gameObject, 2f);
+    }
+
+    void healthCircle()
+    {
+        hCircle.fillAmount = currentHealth / 100.0f;
     }
 }

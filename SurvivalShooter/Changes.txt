@@ -1,0 +1,10 @@
+Completed:
+
+1.) Enemy Health Bar
+3.) Knockback (although it isn't very smooth)
+
+Attempted:
+
+2.) Heartbeat -- Can't get it to loop continuously through low health. Can only get it to sound when having low health and while getting damaged.
+                 It would go silent every time I would put the function call in update by itself + only worked if put inside exiting if statement
+                 or TakeDamage
