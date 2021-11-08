@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public float sinkSpeed = 2.5f;
     public int scoreValue = 10;
     public AudioClip deathClip;
+    public Image damageImage;
+    public Color damageColor;
 
 
     Animator anim;
@@ -40,6 +42,8 @@ public class EnemyHealth : MonoBehaviour
         }
 
         healthCircle();
+
+        damageImage.color = Color.Lerp(damageImage.color, Color.clear, 5 * Time.deltaTime);
     }
 
 
@@ -54,6 +58,8 @@ public class EnemyHealth : MonoBehaviour
             
         hitParticles.transform.position = hitPoint;
         hitParticles.Play();
+
+        damageImage.color = damageColor;
 
         if(currentHealth <= 0)
         {

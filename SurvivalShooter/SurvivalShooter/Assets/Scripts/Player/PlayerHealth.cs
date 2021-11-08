@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
         {
             damageImage.color = flashColour;
 
+
             if (currentHealth <= 50 && currentHealth > 0)
             {
                 lowHealth();

@@ -10099,6 +10099,8 @@ MonoBehaviour:
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
+  damageImage: {fileID: 0}
+  damageColor: {r: 0.93333334, g: 0.09411765, b: 0.101960786, a: 0}
   hCircle: {fileID: 990939869145085064}
 --- !u!114 &114290231285748624
 MonoBehaviour:

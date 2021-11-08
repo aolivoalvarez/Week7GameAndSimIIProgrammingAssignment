@@ -170,6 +170,8 @@ MonoBehaviour:
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
+  damageImage: {fileID: 0}
+  damageColor: {r: 0.9339623, g: 0.09251513, b: 0.1005077, a: 0}
   hCircle: {fileID: 3700051822894606334}
 --- !u!82 &82684988033110934
 AudioSource:

@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
 
 	private Vector3 offset;
 
+
 	void Start()
 	{
 		offset = transform.position - target.position;
@@ -20,11 +21,4 @@ public class CameraFollow : MonoBehaviour
 		transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
 	}
 
-	void CameraShake()
-    {
-		if (PlayerHealth.damaged)
-        {
-
-        }
-    }
 }
