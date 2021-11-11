@@ -3,6 +3,7 @@
 public class PlayerMovement : MonoBehaviour
 {
 	public float speed = 6f;
+	public static int playerIndex = 1;
 
 	private Vector3 movement;
 	private Animator anim;
@@ -19,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		float h = Input.GetAxisRaw("Horizontal");
-		float v = Input.GetAxisRaw("Vertical");
+		float h = Input.GetAxisRaw("Horizontal" + playerIndex);
+		float v = Input.GetAxisRaw("Vertical" + playerIndex);
 
 		Move(h, v);
 		Turning();
