@@ -3,7 +3,8 @@
 public class PlayerMovement : MonoBehaviour
 {
 	public float speed = 6f;
-	public static int playerIndex = 1;
+
+	public int playerIndex;
 
 	private Vector3 movement;
 	private Animator anim;
