@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 	private int floorMask;
 	private float camRayLength = 100f;
 
+
 	void Awake()
 	{
 		floorMask = LayerMask.GetMask("Floor");

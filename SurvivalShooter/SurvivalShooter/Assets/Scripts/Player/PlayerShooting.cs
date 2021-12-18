@@ -6,7 +6,7 @@ public class PlayerShooting : MonoBehaviour
     public float timeBetweenBullets = 0.15f;
     public float range = 100f;
 
-    PlayerMovement m;
+    public PlayerMovement m;
 
 
     float timer;

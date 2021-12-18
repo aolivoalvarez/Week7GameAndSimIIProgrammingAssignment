@@ -7,13 +7,17 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int startingHealth = 100;
-    public int currentHealth;
+    public int currentHealth1;
+    public int currentHealth2;
     public Slider healthSlider;
+    public Slider p2Slider;
+
     public Image damageImage;
     public AudioClip deathClip;
     public float flashSpeed = 5f;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public AudioClip lowHealthClip;
+    public PlayerMovement m;
 
 
     Animator anim;
@@ -30,7 +34,8 @@ public class PlayerHealth : MonoBehaviour
         playerAudio = GetComponent <AudioSource> ();
         playerMovement = GetComponent <PlayerMovement> ();
         playerShooting = GetComponentInChildren <PlayerShooting> ();
-        currentHealth = startingHealth;
+        currentHealth1 = startingHealth;
+        currentHealth2 = startingHealth;
     }
 
 
@@ -41,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
             damageImage.color = flashColour;
 
 
-            if (currentHealth <= 50 && currentHealth > 0)
+            if ((currentHealth1 <= 50 && currentHealth1 > 0) || (currentHealth2 <= 50 && currentHealth2 > 0))
             {
                 lowHealth();
             }
@@ -56,20 +61,39 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    public void TakeDamage (int amount)
+    public void TakeDamage (int amount, int index)
     {
-        damaged = true;
-
-        currentHealth -= amount;
-
-        healthSlider.value = currentHealth;
-
-        playerAudio.Play ();
-
-
-        if (currentHealth <= 0 && !isDead)
+        if (index == 1)
         {
-            Death ();
+            damaged = true;
+
+            currentHealth1 -= amount;
+
+            healthSlider.value = currentHealth1;
+
+            playerAudio.Play();
+
+
+            if (currentHealth1 <= 0 && !isDead)
+            {
+                Death();
+            }
+        }
+        else if (index == 2)
+        {
+            damaged = true;
+
+            currentHealth2 -= amount;
+
+            p2Slider.value = currentHealth2;
+
+            playerAudio.Play();
+
+
+            if (currentHealth2 <= 0 && !isDead)
+            {
+                Death();
+            }
         }
     }
 

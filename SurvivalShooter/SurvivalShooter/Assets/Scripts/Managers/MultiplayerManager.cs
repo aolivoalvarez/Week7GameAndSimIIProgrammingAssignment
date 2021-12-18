@@ -13,7 +13,7 @@ public class MultiplayerManager : MonoBehaviour
     [SerializeField]
     Camera cam2;
 
-    bool pressed = false;
+    public static bool pressed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +27,8 @@ public class MultiplayerManager : MonoBehaviour
             GameObject p = Instantiate(player, transform.position, transform.rotation);
             getSplitScreen();
             pressed = true;
+
+            FindObjectOfType<MultiCamFollowScript>().SetupOffset(p.transform);
         }
     }
 

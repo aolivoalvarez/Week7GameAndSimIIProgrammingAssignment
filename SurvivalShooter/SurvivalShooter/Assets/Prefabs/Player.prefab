@@ -140,7 +140,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b75a561f374f89247a62336b50288d40, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5242,6 +5241,7 @@ MonoBehaviour:
   damagePerShot: 20
   timeBetweenBullets: 0.15
   range: 100
+  m: {fileID: -1832142316876237661}
 --- !u!1 &1841813716941414
 GameObject:
   m_ObjectHideFlags: 0
